@@ -1,5 +1,13 @@
+/**
+ * Класс для создания и управления модальными окнами
+ */
 export class Modal {
-  //* Конструктор класса
+  /**
+   * Создает экземпляр модального окна
+   * @param {HTMLElement} openButton - Кнопка открытия модального окна
+   * @param {HTMLElement} closeButton - Кнопка закрытия модального окна
+   * @param {string} modalClass - CSS класс модального окна
+   */
   constructor(openButton, closeButton, modalClass) {
     //* Элементы попапа
     this.openButton = openButton;
@@ -13,12 +21,17 @@ export class Modal {
     this.closeButton.addEventListener("click", this.closeModal.bind(this));
   }
 
-  //* Функция открытия попапа
+  /**
+   * Открывает модальное окно
+   */
   openModal() {
-    this.body.classList.add(this.modalClass + "_active");
+    this.body.classList.add(`${this.modalClass}_active`);
   }
-  //* Функция закрытия попапа
+
+  /**
+   * Закрывает модальное окно
+   */
   closeModal() {
-    this.body.classList.remove(this.modalClass + "_active");
+    this.body.classList.remove(`${this.modalClass}_active`);
   }
 }
